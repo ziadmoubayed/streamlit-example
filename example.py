@@ -21,7 +21,7 @@ def run_query(query):
 
 
 def get_customers(customer_id):
-    if not customer_id:
+    if customer_id is None or customer_id == 'None':
         return []
     return run_query(f"select * from customer where C_CUSTKEY='{customer_id}'")
 
