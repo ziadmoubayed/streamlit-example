@@ -20,16 +20,16 @@ def run_query(query):
         return cur.fetchall()
 
 
-def get_customers(cusomter_id):
-    if not cusomter_id:
+def get_customers(customer_id):
+    if not customer_id:
         return []
     return run_query(f"select * from customer where C_CUSTKEY='{customer_id}'")
 
 
-cusomter_id = st.text_input('Choose a customer', None)
+customer_id = st.text_input('Choose a customer', None)
 
 
-rows = get_customers(cusomter_id)
+rows = get_customers(customer_id)
 
 # Print results.
 for row in rows:
