@@ -27,7 +27,7 @@ def get_customers(cusomter_id):
 cusomter_id = st.text_input('Choose a customer', 'Customer ID')
 
 
-rows = get_customers()
+rows = get_customers(cusomter_id)
 
 # Print results.
 for row in rows:
