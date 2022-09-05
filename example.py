@@ -21,10 +21,12 @@ def run_query(query):
 
 
 def get_customers(cusomter_id):
+    if not cusomter_id:
+        return []
     return run_query(f"select * from customer where C_CUSTKEY='{customer_id}'")
 
 
-cusomter_id = st.text_input('Choose a customer', 'Customer ID')
+cusomter_id = st.text_input('Choose a customer', None)
 
 
 rows = get_customers(cusomter_id)
