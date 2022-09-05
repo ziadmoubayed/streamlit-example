@@ -19,7 +19,15 @@ def run_query(query):
         cur.execute(query)
         return cur.fetchall()
 
-rows = run_query("select * from customer;")
+
+def get_customers(cusomter_id):
+    return run_query(f"select * from customer where C_CUSTKEY='{customer_id}'")
+
+
+cusomter_id = st.text_input('Choose a customer', 'Customer ID')
+
+
+rows = get_customers()
 
 # Print results.
 for row in rows:
